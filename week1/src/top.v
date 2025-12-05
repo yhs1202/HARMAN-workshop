@@ -37,7 +37,6 @@ module line_buf_ctrl_top #(
   wire o_cs2, o_we2;
   wire [5:0] o_addr2;
   wire [29:0] o_din2;
-  wire o_sel;
 
   wire [29:0] sram1_dout;
   wire [29:0] sram2_dout;
@@ -77,8 +76,7 @@ module line_buf_ctrl_top #(
       .o_we2  (o_we2),
       .o_addr2(o_addr2),
       .o_din2 (o_din2),
-      .i_dout2(sram2_dout),
-      .o_sel  (o_sel)
+      .i_dout2(sram2_dout)
   );
 
 

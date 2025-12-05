@@ -45,17 +45,15 @@ module line_buf_ctrl (
     output reg        o_we2,
     output reg [ 5:0] o_addr2,
     output reg [29:0] o_din2,
-    input      [29:0] i_dout2,
+    input      [29:0] i_dout2
 
-    // Memory Select
-    output reg o_sel
 );
 
   // State Machine
   parameter ST_IDLE = 2'd0;
   parameter ST_FIRST_LINE = 2'd1;
-  parameter ST_ODD_LINE = 2'd2;
-  parameter ST_EVEN_LINE = 2'd3;
+  parameter ST_EVEN_LINE = 2'd2;
+  parameter ST_ODD_LINE = 2'd3;
 
   reg [1:0] state, next_state;
   
@@ -75,26 +73,33 @@ module line_buf_ctrl (
 `endif
   
   // Edge Detection
-  reg de_d, vsync_d, hsync_d;
-  wire vsync_rise = (~vsync_d & i_vsync); // frame start
-  wire vsync_fall   = (vsync_d & ~i_vsync);
-  
-  wire line_start  = (~de_d & i_de);    // start of active line (rising edge of de)
-  wire line_end    = (de_d & ~i_de);    // end of active line (falling edge of de)
+  reg i_de_d, i_vsync_d, i_hsync_d;
+  reg o_de_d;
 
-  wire h_start = (~hsync_d & i_hsync);  // hsync rising
-  wire h_end   = (hsync_d & ~i_hsync);  // hsync falling
+  wire vsync_rise = (~i_vsync_d & i_vsync); // frame start
+  // wire vsync_fall   = (i_vsync_d & ~i_vsync);
+  wire line_start  = (~i_de_d & i_de);    // start of active line (rising edge of de)
+  wire o_line_start = (~o_de_d & o_de);
+  wire line_end    = (i_de_d & ~i_de);    // end of active line (falling edge of de)
+  wire h_start = (~i_hsync_d & i_hsync);  // hsync rising
+  // wire h_end   = (i_hsync_d & ~i_hsync);  // hsync falling
+
+  reg line_end_d;
 
   // Input signal pipeline
   always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-      de_d    <= 0;
-      vsync_d <= 0;
-      hsync_d <= 0;
+      i_de_d    <= 0;
+      i_vsync_d <= 0;
+      i_hsync_d <= 0;
+      o_de_d    <= 0;
+      line_end_d <= 0;
     end else begin
-      de_d    <= i_de;
-      vsync_d <= i_vsync;
-      hsync_d <= i_hsync;
+      i_de_d    <= i_de;
+      i_vsync_d <= i_vsync;
+      i_hsync_d <= i_hsync;
+      o_de_d    <= o_de;
+      line_end_d <= line_end;
     end
   end
   
@@ -102,15 +107,15 @@ module line_buf_ctrl (
   reg [15:0] h_cnt;
   reg [15:0] v_cnt;
   reg [15:0] v_cnt_out;
+  reg [15:0] h_cnt_out;
 
-    always @(posedge clk or negedge rst_n) begin
+  always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
       h_cnt <= 0;
       v_cnt <= 0;
     end else begin
       // Horizontal counter
       if (h_start) h_cnt <= 0;
-      // else if (i_de) h_cnt <= h_cnt + 1;
       else h_cnt <= h_cnt + 1;
 
       // Vertical counter
@@ -125,11 +130,15 @@ module line_buf_ctrl (
   always @(*) begin
     if (v_cnt == 0) v_cnt_out = VTOT - 1;
     else v_cnt_out = v_cnt - 1;
+    if (h_cnt == 0) h_cnt_out = HTOT - 1;
+    else h_cnt_out = h_cnt - 1;
   end
 `else
   always @(*) begin
     // 1 line delay
     v_cnt_out = v_cnt - 1;
+    // 1 pixel delay
+    h_cnt_out = h_cnt - 1;
   end
 `endif
 
@@ -161,11 +170,18 @@ module line_buf_ctrl (
         prev_line_valid <= 0;
       end else begin
         state <= next_state;
-        if (line_end) prev_line_valid <= 1;
-        if (line_start) begin
+        if (line_end) begin
+          prev_line_valid <= 1;
+          addr_cnt <= 0;
+        end
+        else if (line_start || o_line_start) begin
           line_cnt <= line_cnt + 1;
           addr_cnt <= 0;
-        end else if (i_de) begin
+        end
+        else if (i_de) begin
+          addr_cnt <= addr_cnt + 1;
+        end
+        else if (o_de) begin
           addr_cnt <= addr_cnt + 1;
         end
       end
@@ -177,13 +193,17 @@ module line_buf_ctrl (
   always @(*) begin
     next_state = state;
     case (state)
-      ST_IDLE:
-      if (line_start) begin
-        if (line_cnt == 0) next_state = ST_FIRST_LINE;
-        else if (line_cnt[0] == 1'b0) next_state = ST_ODD_LINE;
-        else next_state = ST_EVEN_LINE;
+      ST_IDLE: begin
+        if (line_start) begin
+          if (line_cnt == 0) next_state = ST_FIRST_LINE;
+          else if (line_cnt[0] == 1'b0) next_state = ST_ODD_LINE;
+          else next_state = ST_EVEN_LINE;
+        end
+        // Last line handling
+        if (v_cnt == (VSW + VBP + VACT)) next_state = (VACT == 1) ? ST_IDLE : 
+                                                      (VACT % 2 == 1) ? ST_EVEN_LINE : ST_ODD_LINE;
       end
-      ST_FIRST_LINE, ST_ODD_LINE, ST_EVEN_LINE: if (line_end) next_state = ST_IDLE;
+      ST_FIRST_LINE, ST_ODD_LINE, ST_EVEN_LINE: if (line_end_d) next_state = ST_IDLE;
     endcase
   end
 
@@ -198,43 +218,47 @@ module line_buf_ctrl (
     o_cs1 = 0; o_we1 = 0;
     o_cs2 = 0; o_we2 = 0;
 
-    o_addr1 = addr_cnt;
-    o_addr2 = addr_cnt;
-    o_din1  = {i_red, i_green, i_blue};
-    o_din2  = {i_red, i_green, i_blue};
-
     rd_en = 0;
     rd_s1 = 0;
     rd_s2 = 0;
 
     case (state)
       ST_FIRST_LINE: begin
-        // S1 W, S2 nop
-        if (i_de) begin
+        // S1 W
+        if (i_de || i_de_d) begin
           o_cs1 = 1;
           o_we1 = 1;
+          o_addr1 = addr_cnt;
+          o_addr2 = 0;
+        end
+        // S2 nop
+      end
+
+      ST_EVEN_LINE: begin
+        // S2 W
+        if (i_de || i_de_d) begin
+          o_cs2 = 1; o_we2 = 1;
+          o_addr2 = addr_cnt;
+        end
+        // S1 R
+        if (prev_line_valid) begin
+          o_cs1 = 1; o_we1 = 0;
+          rd_en = 1; rd_s1 = 1;
+          o_addr1 = addr_cnt;
         end
       end
 
       ST_ODD_LINE: begin
-        // S1 W, S2 R
-        if (i_de) begin
+        // S1 W
+        if (i_de || i_de_d) begin
           o_cs1 = 1; o_we1 = 1;
+          o_addr1 = addr_cnt;
         end
-          if (prev_line_valid) begin
-            o_cs2 = 1; o_we2 = 0;
-            rd_en = 1; rd_s2 = 1;
-          end
-      end
-
-      ST_EVEN_LINE: begin
-        // S2 W, S1 R
-        if (i_de) begin
-          o_cs2 = 1; o_we2 = 1;
-        end
-          if (prev_line_valid) begin
-            o_cs1 = 1; o_we1 = 0;
-            rd_en = 1; rd_s1 = 1;
+        // S2 R
+        if (prev_line_valid) begin
+          o_cs2 = 1; o_we2 = 0;
+          rd_en = 1; rd_s2 = 1;
+          o_addr2 = addr_cnt;
         end
       end
     endcase
@@ -245,9 +269,13 @@ module line_buf_ctrl (
     if (!rst_n) begin
       rd_en_d <= 0;
       rd_s1_d <= 0;
+      o_din1  <= 0;
+      o_din2  <= 0;
     end else begin
       rd_en_d <= rd_en;
       rd_s1_d <= rd_s1;
+      o_din1  <= {i_red, i_green, i_blue};
+      o_din2  <= {i_red, i_green, i_blue};
     end
   end
 
@@ -255,6 +283,17 @@ module line_buf_ctrl (
   always @(*) begin
     if (rd_s1_d) mux_data = i_dout1;
     else        mux_data = i_dout2;
+    // DE (2, 6, 3, 13)
+    o_de = (v_cnt_out >= (VSW + VBP)) &&
+            (v_cnt_out <  (VSW + VBP + VACT)) &&
+            (h_cnt >= (HSW + HBP + 1)) &&
+            (h_cnt <  (HSW + HBP + HACT + 1));
+    // RGB Data
+    if (o_de) begin
+      {o_red, o_green, o_blue} = mux_data;
+    end else begin
+      {o_red, o_green, o_blue} = 30'b0;
+    end
   end
   
   // Output Video Signals
@@ -262,11 +301,10 @@ module line_buf_ctrl (
     if (!rst_n) begin
       o_vsync <= 0;
       o_hsync <= 0;
-      o_de    <= 0;
-      o_red   <= 0;
-      o_green <= 0;
-      o_blue  <= 0;
-      o_sel   <= 0;
+      // o_de    <= 0;
+      // o_red   <= 0;
+      // o_green <= 0;
+      // o_blue  <= 0;
     end else begin
 
 
@@ -275,27 +313,14 @@ module line_buf_ctrl (
     if (h_start) o_vsync <= vsync_line_cur;
 
     // HSYNC (active-high)
-    if (h_cnt == HTOT-1) o_hsync <= 1;
+    if (h_cnt_out == HTOT - 1) o_hsync <= 1;
     else o_hsync <= 0;
 
-    // DE (2, 6, 3, 13)
-    o_de <= rd_en_d && 
-            (v_cnt_out >= (VSW + VBP)) &&
-            (v_cnt_out <  (VSW + VBP + VACT)) &&
-            (h_cnt     >= (HSW + HBP)) &&
-            (h_cnt     <  (HSW + HBP + HACT));
 `else
     o_vsync <= i_vsync;
     o_hsync <= i_hsync;
     o_de    <= rd_en_d;
 `endif
-      // RGB Data
-      if (o_de) begin
-        {o_red, o_green, o_blue} <= mux_data;
-        o_sel <= rd_s1_d ? 0 : 1;
-      end else begin
-        {o_red, o_green, o_blue} <= 30'b0;
-      end
     end
   end
 

@@ -74,12 +74,12 @@ module line_buf_ctrl (
   
   // Edge Detection
   reg i_de_d, i_vsync_d, i_hsync_d;
-  reg o_de_d;
+  reg o_hsync_d;
 
   wire vsync_rise = (~i_vsync_d & i_vsync); // frame start
   // wire vsync_fall   = (i_vsync_d & ~i_vsync);
   wire line_start  = (~i_de_d & i_de);    // start of active line (rising edge of de)
-  wire o_line_start = (~o_de_d & o_de);
+  wire o_line_start = (~o_hsync_d & o_hsync);
   wire line_end    = (i_de_d & ~i_de);    // end of active line (falling edge of de)
   wire h_start = (~i_hsync_d & i_hsync);  // hsync rising
   // wire h_end   = (i_hsync_d & ~i_hsync);  // hsync falling
@@ -92,13 +92,13 @@ module line_buf_ctrl (
       i_de_d    <= 0;
       i_vsync_d <= 0;
       i_hsync_d <= 0;
-      o_de_d    <= 0;
+      o_hsync_d <= 0;
       line_end_d <= 0;
     end else begin
       i_de_d    <= i_de;
       i_vsync_d <= i_vsync;
       i_hsync_d <= i_hsync;
-      o_de_d    <= o_de;
+      o_hsync_d    <= o_hsync;
       line_end_d <= line_end;
     end
   end
@@ -174,8 +174,11 @@ module line_buf_ctrl (
           prev_line_valid <= 1;
           addr_cnt <= 0;
         end
-        else if (line_start || o_line_start) begin
+        else if (line_start) begin
           line_cnt <= line_cnt + 1;
+          addr_cnt <= 0;
+        end
+        else if (o_line_start) begin
           addr_cnt <= 0;
         end
         else if (i_de) begin
@@ -200,8 +203,9 @@ module line_buf_ctrl (
           else next_state = ST_EVEN_LINE;
         end
         // Last line handling
-        if (v_cnt == (VSW + VBP + VACT)) next_state = (VACT == 1) ? ST_IDLE : 
-                                                      (VACT % 2 == 1) ? ST_EVEN_LINE : ST_ODD_LINE;
+        if (v_cnt == (VSW + VBP + VACT)) begin
+          next_state = (VACT == 1) ? ST_IDLE : (VACT % 2 == 1) ? ST_EVEN_LINE : ST_ODD_LINE;
+        end
       end
       ST_FIRST_LINE, ST_ODD_LINE, ST_EVEN_LINE: if (line_end_d) next_state = ST_IDLE;
     endcase
@@ -285,9 +289,9 @@ module line_buf_ctrl (
     else        mux_data = i_dout2;
     // DE (2, 6, 3, 13)
     o_de = (v_cnt_out >= (VSW + VBP)) &&
-            (v_cnt_out <  (VSW + VBP + VACT)) &&
-            (h_cnt >= (HSW + HBP + 1)) &&
-            (h_cnt <  (HSW + HBP + HACT + 1));
+           (v_cnt_out <  (VSW + VBP + VACT)) &&
+           (h_cnt >= (HSW + HBP + 1)) &&
+           (h_cnt <  (HSW + HBP + HACT + 1));
     // RGB Data
     if (o_de) begin
       {o_red, o_green, o_blue} = mux_data;
@@ -306,7 +310,6 @@ module line_buf_ctrl (
       // o_green <= 0;
       // o_blue  <= 0;
     end else begin
-
 
 `ifdef SIM
     // VSYNC (active-high)

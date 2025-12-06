@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1181401fs"></ZoomEndTime>
+      <Cursor1Time time="729430fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="179"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="85" />
+   <wvobject fp_name="/testbench/r_rst_n" type="logic">
+      <obj_property name="ElementShortName">r_rst_n</obj_property>
+      <obj_property name="ObjectShortName">r_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_clk_en" type="logic">
+      <obj_property name="ElementShortName">r_clk_en</obj_property>
+      <obj_property name="ObjectShortName">r_clk_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_pclk" type="logic">
+      <obj_property name="ElementShortName">w_pclk</obj_property>
+      <obj_property name="ObjectShortName">w_pclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_vsync" type="logic">
+      <obj_property name="ElementShortName">w_vsync</obj_property>
+      <obj_property name="ObjectShortName">w_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_hsync" type="logic">
+      <obj_property name="ElementShortName">w_hsync</obj_property>
+      <obj_property name="ObjectShortName">w_hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_de" type="logic">
+      <obj_property name="ElementShortName">w_de</obj_property>
+      <obj_property name="ObjectShortName">w_de</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_red" type="array">
+      <obj_property name="ElementShortName">w_red[9:0]</obj_property>
+      <obj_property name="ObjectShortName">w_red[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_green" type="array">
+      <obj_property name="ElementShortName">w_green[9:0]</obj_property>
+      <obj_property name="ObjectShortName">w_green[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/w_blue" type="array">
+      <obj_property name="ElementShortName">w_blue[9:0]</obj_property>
+      <obj_property name="ObjectShortName">w_blue[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vstate" type="array">
+      <obj_property name="ElementShortName">r_vstate[2:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vstate[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hstate" type="array">
+      <obj_property name="ElementShortName">r_hstate[2:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hstate[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vsync" type="logic">
+      <obj_property name="ElementShortName">r_vsync</obj_property>
+      <obj_property name="ObjectShortName">r_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hsync" type="logic">
+      <obj_property name="ElementShortName">r_hsync</obj_property>
+      <obj_property name="ObjectShortName">r_hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_de" type="logic">
+      <obj_property name="ElementShortName">r_de</obj_property>
+      <obj_property name="ObjectShortName">r_de</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_red" type="array">
+      <obj_property name="ElementShortName">r_red[9:0]</obj_property>
+      <obj_property name="ObjectShortName">r_red[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_green" type="array">
+      <obj_property name="ElementShortName">r_green[9:0]</obj_property>
+      <obj_property name="ObjectShortName">r_green[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_blue" type="array">
+      <obj_property name="ElementShortName">r_blue[9:0]</obj_property>
+      <obj_property name="ObjectShortName">r_blue[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_frame_cnt" type="array">
+      <obj_property name="ElementShortName">r_frame_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_frame_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vstate_cnt" type="array">
+      <obj_property name="ElementShortName">r_vstate_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vstate_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hstate_cnt" type="array">
+      <obj_property name="ElementShortName">r_hstate_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hstate_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hsw_cnt" type="array">
+      <obj_property name="ElementShortName">r_hsw_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hsw_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hbp_cnt" type="array">
+      <obj_property name="ElementShortName">r_hbp_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hbp_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hfp_cnt" type="array">
+      <obj_property name="ElementShortName">r_hfp_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hfp_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_hact_cnt" type="array">
+      <obj_property name="ElementShortName">r_hact_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hact_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vsw_cnt" type="array">
+      <obj_property name="ElementShortName">r_vsw_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vsw_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vbp_cnt" type="array">
+      <obj_property name="ElementShortName">r_vbp_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vbp_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vfp_cnt" type="array">
+      <obj_property name="ElementShortName">r_vfp_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vfp_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/r_vact_cnt" type="array">
+      <obj_property name="ElementShortName">r_vact_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_vact_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/cur_vstate" type="array">
+      <obj_property name="ElementShortName">cur_vstate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_vstate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/cur_hstate" type="array">
+      <obj_property name="ElementShortName">cur_hstate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_hstate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/vsync_line_cur" type="logic">
+      <obj_property name="ElementShortName">vsync_line_cur</obj_property>
+      <obj_property name="ObjectShortName">vsync_line_cur</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_vsync" type="logic">
+      <obj_property name="ElementShortName">i_vsync</obj_property>
+      <obj_property name="ObjectShortName">i_vsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_hsync" type="logic">
+      <obj_property name="ElementShortName">i_hsync</obj_property>
+      <obj_property name="ObjectShortName">i_hsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/h_start" type="logic">
+      <obj_property name="ElementShortName">h_start</obj_property>
+      <obj_property name="ObjectShortName">h_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_hsync_d" type="logic">
+      <obj_property name="ElementShortName">i_hsync_d</obj_property>
+      <obj_property name="ObjectShortName">i_hsync_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_de" type="logic">
+      <obj_property name="ElementShortName">i_de</obj_property>
+      <obj_property name="ObjectShortName">i_de</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_de_d" type="logic">
+      <obj_property name="ElementShortName">i_de_d</obj_property>
+      <obj_property name="ObjectShortName">i_de_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_vsync_d" type="logic">
+      <obj_property name="ElementShortName">i_vsync_d</obj_property>
+      <obj_property name="ObjectShortName">i_vsync_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/vsync_rise" type="logic">
+      <obj_property name="ElementShortName">vsync_rise</obj_property>
+      <obj_property name="ObjectShortName">vsync_rise</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_red" type="array">
+      <obj_property name="ElementShortName">i_red[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_red[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_green" type="array">
+      <obj_property name="ElementShortName">i_green[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_green[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_blue" type="array">
+      <obj_property name="ElementShortName">i_blue[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_blue[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_vsync" type="logic">
+      <obj_property name="ElementShortName">o_vsync</obj_property>
+      <obj_property name="ObjectShortName">o_vsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_hsync" type="logic">
+      <obj_property name="ElementShortName">o_hsync</obj_property>
+      <obj_property name="ObjectShortName">o_hsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_hsync_d" type="logic">
+      <obj_property name="ElementShortName">o_hsync_d</obj_property>
+      <obj_property name="ObjectShortName">o_hsync_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_de" type="logic">
+      <obj_property name="ElementShortName">o_de</obj_property>
+      <obj_property name="ObjectShortName">o_de</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_red" type="array">
+      <obj_property name="ElementShortName">o_red[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_red[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_green" type="array">
+      <obj_property name="ElementShortName">o_green[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_green[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_blue" type="array">
+      <obj_property name="ElementShortName">o_blue[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_blue[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/h_cnt" type="array">
+      <obj_property name="ElementShortName">h_cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">h_cnt[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/h_cnt_out" type="array">
+      <obj_property name="ElementShortName">h_cnt_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">h_cnt_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/v_cnt" type="array">
+      <obj_property name="ElementShortName">v_cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">v_cnt[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/v_cnt_out" type="array">
+      <obj_property name="ElementShortName">v_cnt_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">v_cnt_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/rd_en" type="logic">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/rd_en_d" type="logic">
+      <obj_property name="ElementShortName">rd_en_d</obj_property>
+      <obj_property name="ObjectShortName">rd_en_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/rd_s1" type="logic">
+      <obj_property name="ElementShortName">rd_s1</obj_property>
+      <obj_property name="ObjectShortName">rd_s1</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_cs1" type="logic">
+      <obj_property name="ElementShortName">o_cs1</obj_property>
+      <obj_property name="ObjectShortName">o_cs1</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_we1" type="logic">
+      <obj_property name="ElementShortName">o_we1</obj_property>
+      <obj_property name="ObjectShortName">o_we1</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/rd_s2" type="logic">
+      <obj_property name="ElementShortName">rd_s2</obj_property>
+      <obj_property name="ObjectShortName">rd_s2</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_cs2" type="logic">
+      <obj_property name="ElementShortName">o_cs2</obj_property>
+      <obj_property name="ObjectShortName">o_cs2</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_we2" type="logic">
+      <obj_property name="ElementShortName">o_we2</obj_property>
+      <obj_property name="ObjectShortName">o_we2</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/w_addr_cnt" type="array">
+      <obj_property name="ElementShortName">w_addr_cnt[5:0]</obj_property>
+      <obj_property name="ObjectShortName">w_addr_cnt[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/r_addr_cnt" type="array">
+      <obj_property name="ElementShortName">r_addr_cnt[5:0]</obj_property>
+      <obj_property name="ObjectShortName">r_addr_cnt[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_addr1" type="array">
+      <obj_property name="ElementShortName">o_addr1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">o_addr1[5:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_addr2" type="array">
+      <obj_property name="ElementShortName">o_addr2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">o_addr2[5:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_din1" type="array">
+      <obj_property name="ElementShortName">o_din1[29:0]</obj_property>
+      <obj_property name="ObjectShortName">o_din1[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_din2" type="array">
+      <obj_property name="ElementShortName">o_din2[29:0]</obj_property>
+      <obj_property name="ObjectShortName">o_din2[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_dout1" type="array">
+      <obj_property name="ElementShortName">i_dout1[29:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dout1[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/i_dout2" type="array">
+      <obj_property name="ElementShortName">i_dout2[29:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dout2[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/w_dout" type="array">
+      <obj_property name="ElementShortName">w_dout[29:0]</obj_property>
+      <obj_property name="ObjectShortName">w_dout[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/line_cnt" type="array">
+      <obj_property name="ElementShortName">line_cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">line_cnt[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/is_read_only" type="logic">
+      <obj_property name="ElementShortName">is_read_only</obj_property>
+      <obj_property name="ObjectShortName">is_read_only</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/o_line_start" type="logic">
+      <obj_property name="ElementShortName">o_line_start</obj_property>
+      <obj_property name="ObjectShortName">o_line_start</obj_property>
+      <obj_property name="CustomSignalColor">#D2691E</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/line_start" type="logic">
+      <obj_property name="ElementShortName">line_start</obj_property>
+      <obj_property name="ObjectShortName">line_start</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/line_end" type="logic">
+      <obj_property name="ElementShortName">line_end</obj_property>
+      <obj_property name="ObjectShortName">line_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/line_end_d" type="logic">
+      <obj_property name="ElementShortName">line_end_d</obj_property>
+      <obj_property name="ObjectShortName">line_end_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/prev_line_valid" type="logic">
+      <obj_property name="ElementShortName">prev_line_valid</obj_property>
+      <obj_property name="ObjectShortName">prev_line_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/ST_IDLE" type="array">
+      <obj_property name="ElementShortName">ST_IDLE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_IDLE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/ST_FIRST_LINE" type="array">
+      <obj_property name="ElementShortName">ST_FIRST_LINE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_FIRST_LINE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/ST_EVEN_LINE" type="array">
+      <obj_property name="ElementShortName">ST_EVEN_LINE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_EVEN_LINE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_line_buf_ctrl_top/u_line_buf_ctrl/ST_ODD_LINE" type="array">
+      <obj_property name="ElementShortName">ST_ODD_LINE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_ODD_LINE[1:0]</obj_property>
+   </wvobject>
+</wave_config>

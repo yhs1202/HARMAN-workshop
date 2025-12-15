@@ -11,6 +11,8 @@ class adder_rand extends base_vseq_c;
     endfunction : new
 
     virtual task body();
+        `uvm_info("DBG", $sformatf("starting_phase=%s", (starting_phase==null)?"NULL":starting_phase.get_name()), UVM_NONE)
+
         `uvm_info(get_type_name(), $sformatf("----------------------------------------------"), UVM_LOW)
         `uvm_info(get_type_name(), $sformatf("-------------Start adder_rand_test------------"), UVM_LOW)
         `uvm_info(get_type_name(), $sformatf("----------------------------------------------"), UVM_LOW)

@@ -32,3 +32,25 @@
 .DS_Store
 Thumbs.db
 .nvim/
+
+# VCS build output
+sim_out/
+csrc/
+simv
+simv.daidir/
+DVEfiles/
+ucli.key
+vc_hdrs.h
+*.vpd
+*.vcd
+*.fsdb
+*.key
+*.log
+
+# Coverage
+urgReport/
+
+# Verdi
+novas.db
+verdiLog/
+verdi.wlf

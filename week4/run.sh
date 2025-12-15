@@ -15,10 +15,11 @@ vcs -full64 -sverilog \
     -Mdir=$OUT/csrc \
     -o $OUT/simv \
     -l vcs_$timestamp.txt \
-    -f run.f
+    -f run.f \
+    ./tb/addFunc.c
 
 cd $OUT
 ./simv +fsdbfile+wave.fsdb \
-     -l ../sim_$timestamp.txt
-
+     -l ../sim_$timestamp.txt \
+     +UVM_VERBOSITY=UVM_LOW
 cd ..

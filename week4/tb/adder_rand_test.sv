@@ -1,34 +1,3 @@
-// TEST 1
-class adder_rand_test_c extends base_test_c;
-    
-    `uvm_component_utils(adder_rand_test_c)
-
-
-    function new(string name = "adder_rand_test_c", uvm_component parent = null);
-        super.new(name, parent);
-    endfunction : new
-
-    // Build phase
-    function void build_phase(uvm_phase phase);
-        super.build_phase(phase);
-
-        // Set the default sequence for the sequence runner
-        // vseqr.run_phase -> default_sequence (mostly used)
-        uvm_config_db#(uvm_object_wrapper)::set(this, "tb.vseqr.run_phase", "default_sequence", adder_rand::type_id::get());
-    endfunction : build_phase
-
-    // Run phase
-    // task run_phase(uvm_phase phase);
-        // super.run_phase(phase);
-    // endtask : run_phase
-
-    // After build phase, print the UVM component hierarchy in end_of_elaboration_phase
-    virtual function void end_of_elaboration_phase(uvm_phase phase);
-        super.end_of_elaboration_phase(phase);
-        uvm_top.print_topology();
-    endfunction : end_of_elaboration_phase
-
-endclass : adder_rand_test_c
 
 // Virtual sequence Class
 class adder_rand extends base_vseq_c;
@@ -64,3 +33,39 @@ class adder_rand extends base_vseq_c;
         `uvm_info(get_type_name(), $sformatf("----------------------------------------------"), UVM_LOW)
     endtask : body
 endclass : adder_rand
+
+// TEST 1
+class adder_rand_test_c extends base_test_c;
+    
+    `uvm_component_utils(adder_rand_test_c)
+
+
+    function new(string name = "adder_rand_test_c", uvm_component parent = null);
+        super.new(name, parent);
+    endfunction : new
+
+    // Build phase
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+
+        // Set the default sequence for the sequence runner
+        // vseqr.run_phase -> default_sequence (mostly used)
+        uvm_config_db#(uvm_object_wrapper)::set(this, "tb.vseqr.run_phase", "default_sequence", adder_rand::type_id::get());
+    endfunction : build_phase
+
+    // Run phase
+    task run_phase(uvm_phase phase);
+        `uvm_info("DBG", "adder_rand_test_c run_phase entered", UVM_NONE)
+        phase.raise_objection(this);
+        super.run_phase(phase);
+        #1us;
+        phase.drop_objection(this);
+    endtask : run_phase
+
+    // After build phase, print the UVM component hierarchy in end_of_elaboration_phase
+    virtual function void end_of_elaboration_phase(uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        uvm_top.print_topology();
+    endfunction : end_of_elaboration_phase
+
+endclass : adder_rand_test_c

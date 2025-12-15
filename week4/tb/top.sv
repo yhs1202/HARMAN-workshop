@@ -34,8 +34,9 @@ module top;
     end
 
     initial begin
-        $dumpfile("dump.fsdb");
+        $fsdbDumpfile("wave.fsdb");
+        $fsdbDumpvars(0);
         // $dumpfile("dump.vcd");
-        $dumpvars(0, top);
+        // $dumpvars(0, top);
     end
 endmodule

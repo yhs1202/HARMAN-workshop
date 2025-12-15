@@ -1,0 +1,213 @@
+Command: /home/hedu31/hsyoon/HARMAN-workshop/week4/sim_out/./simv +fsdbfile+wave.fsdb -l ../sim_20251216_021019.txt -svseed random +UVM_VERBOSITY=UVM_LOW
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Dec 16 02:10 2025
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_sequencer_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_driver_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_monitor_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_agent_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_drv_pkt_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_mon_pkt_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_seq_item_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_base_seq_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_rand_seq_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_user_seq_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_WARNING @ 0: reporter [TPRGED] Type name 'adder_vseq_c' already registered with factory. No string-based lookup support for multiple types with the same type name.
+UVM_INFO @ 0: reporter [RNTST] Running test adder_user_test_c...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'wave.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+UVM_INFO ./tb/tb.sv(16) @ 0: uvm_test_top.tb [uvm_test_top.tb] build_phase() starts..
+UVM_INFO ./tb/tb.sv(22) @ 0: uvm_test_top.tb [uvm_test_top.tb] build_phase() ends..
+UVM_INFO ./tb/adder_env.sv(16) @ 0: uvm_test_top.tb.adder_env [adder_env_c] build_phase() starts..
+UVM_INFO ./tb/adder_env.sv(23) @ 0: uvm_test_top.tb.adder_env [adder_env_c] build_phase() ends..
+UVM_INFO ./tb/adder_agent.sv(22) @ 0: uvm_test_top.tb.adder_env.adder_agent [adder_agent_c] build_phase() starts..
+UVM_INFO ./tb/adder_agent.sv(28) @ 0: uvm_test_top.tb.adder_env.adder_agent [adder_agent_c] is_active = UVM_ACTIVE
+UVM_INFO ./tb/adder_agent.sv(37) @ 0: uvm_test_top.tb.adder_env.adder_agent [adder_agent_c] build_phase() ends..
+UVM_INFO ./tb/adder_driver.sv(15) @ 0: uvm_test_top.tb.adder_env.adder_agent.adder_driver [uvm_test_top.tb.adder_env.adder_agent.adder_driver] build_phase() starts..
+UVM_INFO ./tb/adder_driver.sv(22) @ 0: uvm_test_top.tb.adder_env.adder_agent.adder_driver [uvm_test_top.tb.adder_env.adder_agent.adder_driver] build_phase() ends..
+UVM_INFO ./tb/adder_monitor.sv(23) @ 0: uvm_test_top.tb.adder_env.adder_agent.adder_monitor [adder_monitor_c] build_phase() starts..
+UVM_INFO ./tb/adder_monitor.sv(29) @ 0: uvm_test_top.tb.adder_env.adder_agent.adder_monitor [adder_monitor_c] build_phase() ends..
+UVM_INFO ./tb/adder_agent.sv(44) @ 0: uvm_test_top.tb.adder_env.adder_agent [uvm_test_top.tb.adder_env.adder_agent] connect_phase() starts..
+UVM_INFO ./tb/adder_agent.sv(49) @ 0: uvm_test_top.tb.adder_env.adder_agent [uvm_test_top.tb.adder_env.adder_agent] Connecting ACTIVE agent components..
+UVM_INFO ./tb/adder_agent.sv(53) @ 0: uvm_test_top.tb.adder_env.adder_agent [uvm_test_top.tb.adder_env.adder_agent] connect_phase() ends..
+UVM_INFO ./tb/adder_env.sv(29) @ 0: uvm_test_top.tb.adder_env [adder_env_c] connect_phase() starts..
+UVM_INFO ./tb/adder_env.sv(34) @ 0: uvm_test_top.tb.adder_env [adder_env_c] connect_phase() ends..
+UVM_INFO ./tb/vseqr.sv(15) @ 0: uvm_test_top.tb.vseqr [vseqr_c] connect_phase() starts..
+UVM_INFO ./tb/vseqr.sv(22) @ 0: uvm_test_top.tb.vseqr [vseqr_c] connect_phase() ends..
+UVM_INFO ./tb/tb.sv(29) @ 0: uvm_test_top.tb [tb_c] connect_phase() starts..
+UVM_INFO ./tb/tb.sv(33) @ 0: uvm_test_top.tb [tb_c] connect_phase() ends..
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+-------------------------------------------------------------------------
+Name                         Type                        Size  Value     
+-------------------------------------------------------------------------
+uvm_test_top                 adder_user_test_c           -     @365      
+  tb                         tb_c                        -     @378      
+    adder_env                adder_env_c                 -     @530      
+      adder_agent            adder_agent_c               -     @543      
+        adder_driver         adder_driver_c              -     @734      
+          rsp_port           uvm_analysis_port           -     @753      
+          seq_item_port      uvm_seq_item_pull_port      -     @743      
+        adder_monitor        adder_monitor_c             -     @763      
+          in_data_port       uvm_analysis_port           -     @772      
+          out_data_port      uvm_analysis_port           -     @782      
+        adder_sequencer      adder_sequencer_c           -     @597      
+          rsp_export         uvm_analysis_export         -     @606      
+          seq_item_export    uvm_seq_item_pull_imp       -     @724      
+          arbitration_queue  array                       0     -         
+          lock_queue         array                       0     -         
+          num_last_reqs      integral                    32    'd1       
+          num_last_rsps      integral                    32    'd1       
+        is_active            uvm_active_passive_enum     1     UVM_ACTIVE
+      adder_sb               adder_sb_c                  -     @556      
+        in_adder_imp_port    uvm_analysis_imp_in_adder   -     @565      
+        out_adder_imp_port   uvm_analysis_imp_out_adder  -     @575      
+    vseqr                    vseqr_c                     -     @393      
+      rsp_export             uvm_analysis_export         -     @402      
+      seq_item_export        uvm_seq_item_pull_imp       -     @520      
+      arbitration_queue      array                       0     -         
+      lock_queue             array                       0     -         
+      num_last_reqs          integral                    32    'd1       
+      num_last_rsps          integral                    32    'd1       
+-------------------------------------------------------------------------
+
+UVM_INFO ./tb/adder_user_test.sv(60) @ 0: uvm_test_top [DBG] adder_rand_test_c run_phase entered
+UVM_INFO ./tb/adder_user_test.sv(15) @ 0: uvm_test_top.tb.vseqr@@adder_user [adder_user] ----------------------------------------------
+UVM_INFO ./tb/adder_user_test.sv(16) @ 0: uvm_test_top.tb.vseqr@@adder_user [adder_user] -------------Start adder_user_test------------
+UVM_INFO ./tb/adder_user_test.sv(17) @ 0: uvm_test_top.tb.vseqr@@adder_user [adder_user] ----------------------------------------------
+UVM_INFO ./tb/adder_user_test.sv(21) @ 40000: uvm_test_top.tb.vseqr@@adder_user [adder_user] Reset ended
+UVM_INFO ./tb/adder_vseq_lib.sv(30) @ 40000: uvm_test_top.tb.adder_env.adder_agent.adder_sequencer@@adder_user.adder_vseq [adder_vseq_c] adder_vseq_c starts..
+UVM_INFO ./tb/adder_seq_lib.sv(96) @ 40000: uvm_test_top.tb.adder_env.adder_agent.adder_sequencer@@adder_user.adder_vseq.adder_user_seq [adder_user_seq_c] adder_user_seq_c starts..
+UVM_INFO ./tb/adder_sb.sv(73) @ 50000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 70000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 90000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 110000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 130000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 150000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 170000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(83) @ 170000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received output packet: 
+UVM_ERROR ./tb/adder_sb.sv(53) @ 170000: uvm_test_top.tb.adder_env.adder_sb [adder_sb_c] MISMATCH: Expected: 2047, DUT: 0
+UVM_INFO ./tb/adder_sb.sv(73) @ 190000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(83) @ 190000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received output packet: 
+UVM_INFO ./tb/adder_sb.sv(50) @ 190000: uvm_test_top.tb.adder_env.adder_sb [adder_sb_c] MATCH: Expected: 2047, DUT: 2047
+UVM_INFO ./tb/adder_sb.sv(73) @ 210000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(83) @ 210000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received output packet: 
+UVM_INFO ./tb/adder_sb.sv(50) @ 210000: uvm_test_top.tb.adder_env.adder_sb [adder_sb_c] MATCH: Expected: 2047, DUT: 2047
+UVM_INFO ./tb/adder_sb.sv(73) @ 230000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 250000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 270000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 290000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 310000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 330000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 350000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 370000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 390000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_seq_lib.sv(107) @ 390000: uvm_test_top.tb.adder_env.adder_agent.adder_sequencer@@adder_user.adder_vseq.adder_user_seq [adder_user_seq_c] adder_user_seq_c ends..
+UVM_INFO ./tb/adder_sb.sv(73) @ 410000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 430000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 450000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 470000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_user_test.sv(34) @ 470000: uvm_test_top.tb.vseqr@@adder_user [adder_user] ----------------------------------------------
+UVM_INFO ./tb/adder_user_test.sv(35) @ 470000: uvm_test_top.tb.vseqr@@adder_user [adder_user] -------------------TEST DONE------------------
+UVM_INFO ./tb/adder_user_test.sv(36) @ 470000: uvm_test_top.tb.vseqr@@adder_user [adder_user] ----------------------------------------------
+UVM_INFO ./tb/adder_sb.sv(73) @ 490000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 510000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 530000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 550000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 570000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 590000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 610000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 630000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 650000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 670000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 690000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 710000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 730000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 750000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 770000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 790000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 810000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 830000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 850000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 870000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 890000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 910000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 930000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 950000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 970000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO ./tb/adder_sb.sv(73) @ 990000: uvm_test_top.tb.adder_env.adder_sb [uvm_test_top.tb.adder_env.adder_sb] Scoreboard received input packet: 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 1000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/adder_sb.sv(66) @ 1000000: uvm_test_top.tb.adder_env.adder_sb [adder_sb_c] MATCH COUNT: 2
+UVM_INFO ./tb/adder_sb.sv(67) @ 1000000: uvm_test_top.tb.adder_env.adder_sb [adder_sb_c] MISMATCH COUNT: 1
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 1000000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 1000000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   91
+UVM_WARNING :   11
+UVM_ERROR :    1
+UVM_FATAL :    0
+** Report counts by id
+[DBG]     1
+[RNTST]     1
+[TEST_DONE]     1
+[TPRGED]    11
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[adder_agent_c]     3
+[adder_env_c]     4
+[adder_monitor_c]     2
+[adder_sb_c]     5
+[adder_user]     7
+[adder_user_seq_c]     2
+[adder_vseq_c]     1
+[tb_c]     2
+[uvm_test_top.tb]     2
+[uvm_test_top.tb.adder_env.adder_agent]     3
+[uvm_test_top.tb.adder_env.adder_agent.adder_driver]     2
+[uvm_test_top.tb.adder_env.adder_sb]    51
+[vseqr_c]     2
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              1000000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1000000 ps
+CPU Time:      0.240 seconds;       Data structure size:   0.6Mb
+Tue Dec 16 02:10:29 2025
